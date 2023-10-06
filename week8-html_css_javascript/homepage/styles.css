@@ -1,0 +1,70 @@
+html {
+    background-color: black;
+    background-image: url('images/rdr2.jpg');
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    object-fit: scale-down;
+    max-width: 80%;
+    width: 800px;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+
+button:hover {
+    color: grey !important;
+}
+
+h3 {
+    font-family: georgia;
+}
+
+.navbar-lg {
+    background-color: black !important;
+    text-align: center !important;
+}
+
+.center-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+.carousel-inner {
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+.text-wb {
+    color: white;
+    font-weight: bold;
+}
+
+#content {
+    display: none;
+}
+
+#progress {
+    color:green !important;
+}
+
+#imgfooter {
+    height: 25px;
+}

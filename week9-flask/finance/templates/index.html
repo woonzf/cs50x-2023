@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <th class="text-start">Symbol</th>
+            <th class="text-start">Name</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">TOTAL</th>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td class="text-start">{{ row.symbol | upper }}</td>
+                <td class="text-start">{{ row.name }}</td>
+                <td class="text-end">{{ row.shares }}</td>
+                <td class="text-end">{{ row.price | usd }}</td>
+                <td class="text-end">{{ row.total | usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-end fw-bold border-0" colspan="4">Cash</td>
+                <td class="text-end border-0">{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td class="text-end fw-bold border-0" colspan="4">TOTAL</td>
+                <td class="text-end border-0">{{ (data | sum(attribute='total') + cash) | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

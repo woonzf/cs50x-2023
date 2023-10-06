@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                // Check for correct button click
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#text1').innerHTML = 'Correct!';
+                });
+
+                // Check for incorrect button click
+                let incorrect = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrect.length; i++){
+                    incorrect[i].addEventListener('click', function() {
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#text1').innerHTML = 'Incorrect';
+                    });
+                }
+
+                // Check for second question's answer
+                document.querySelector('#submit').addEventListener('click', function() {
+                    let answer = document.querySelector('#answer');
+                    if (answer.value.toLowerCase() === 'bruce') {
+                        answer.style.backgroundColor = 'green';
+                        document.querySelector('#text2').innerHTML = 'Correct!';
+                    } else {
+                        answer.style.backgroundColor = 'red';
+                        document.querySelector('#text2').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>
+                    In the town of Fiftyville on July 28th, there was a theft took place in a bakery on Humphrey Street. Which of the following was stolen?
+                </h3>
+                <button class="incorrect">Cat</button>
+                <button class="incorrect">Dog</button>
+                <button class="correct">Duck</button>
+                <button class="incorrect">Otter</button>
+                <p id="text1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    Who was the thief in the above incident? <!-- Bruce -->
+                </h3>
+                <input type="text" id="answer">
+                <button id="submit">Submit</button>
+                <p id="text2"></p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+SELECT AVG(danceability) FROM songs;
+0.71646
+SELECT AVG(energy) FROM songs;
+0.65906
+SELECT AVG(valence) FROM songs;
+0.484443
+
+Answer: Highest in danceability so 'Purple' based on my understanding on the article.
+Answer: It is only based on the highest attribute of the three mentioned,
+        a better solution would be by having an algorithm that includes the other attributes
+        like 'loudness', 'speechiness' and 'tempo' as well.
